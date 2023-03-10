@@ -1,5 +1,6 @@
 package com.latifah.dogs.ui.fragments.likes.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -41,6 +42,7 @@ class LikesImageGridAdapter : ListAdapter<Likes,
 
     companion object DiffCallback : DiffUtil.ItemCallback<Likes>() {
         override fun areItemsTheSame(oldItem: Likes, newItem: Likes): Boolean {
+            Log.i("RV*****", "areItemsTheSame: $oldItem")
             return oldItem.id == newItem.id
         }
 

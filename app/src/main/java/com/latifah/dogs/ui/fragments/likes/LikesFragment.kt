@@ -60,8 +60,8 @@ class LikesFragment : Fragment() {
 //
 ////        binding.likesGrid.adapter= LikesImageGridAdapter()
 //
-//        recyclerView = binding.likesGrid
-//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+////        recyclerView = binding.likesGrid
+////        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 //
 //        likesViewModel.allLikes.observe(viewLifecycleOwner, {
 //            it?.let {

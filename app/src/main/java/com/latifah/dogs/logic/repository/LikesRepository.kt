@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 class LikesRepository (private val likesDao : LikesDao) {
     val getLikes : Flow<List<Likes>> = likesDao.getLikes()
 
-    suspend fun addLike(like: Likes) {
+     suspend fun addLike(like: Likes) {
         likesDao.addLike(like)
     }
 

@@ -2,7 +2,7 @@
     <string name="app_name">Dogs</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Dogs</string>
-    <string name="btn_getDog">Gimme A Dog</string>
+    <string name="btn_getDog">Woof</string>
     <string name="iv_alt">Here\'s a cute random dog</string>
 
 </resources>

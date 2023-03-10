@@ -49,9 +49,9 @@ class DogImageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.message.observe(viewLifecycleOwner, {
+        viewModel.message.observe(viewLifecycleOwner) {
             likeImg = it
-        })
+        }
 
         binding.btnGetDog.setOnClickListener {
             viewModel.getDogImage()
@@ -62,12 +62,21 @@ class DogImageFragment : Fragment() {
             addLike()
         }
 
+        //click prev button
+        //get history count
+        // if it's 0 or null
+        //disable button
+        //else get last added image id
+        //then getHistoryImageById(id - 1)
+        //replace the dogImage with the history
     }
 
     private fun addLike() {
         if (likeImg.isNotEmpty()) {
             val like = Likes(0, likeImg)
             likesViewModel.addLike(like)
+            Toast.makeText(context, "You liked a doggo", Toast.LENGTH_SHORT).show()
+
         } else {
             Toast.makeText(context, "There was an error ", Toast.LENGTH_SHORT).show()
         }

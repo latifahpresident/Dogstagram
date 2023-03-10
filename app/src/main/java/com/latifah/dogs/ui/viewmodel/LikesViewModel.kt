@@ -6,11 +6,13 @@ import com.latifah.dogs.logic.repository.LikesRepository
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 import androidx.lifecycle.LiveData
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 
 class LikesViewModel(private val repository: LikesRepository) : ViewModel() {
     val allLikes : LiveData<List<Likes>> = repository.getLikes.asLiveData() //convert the flow to live data
 
-    fun addLike(like: Likes) = viewModelScope.launch {
+    fun addLike(like: Likes) = CoroutineScope(Dispatchers.IO).launch {
         repository.addLike(like)
     }
 }

@@ -5,12 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.latifah.dogs.data.models.Likes
+import com.latifah.dogs.logic.dao.HistoryDao
 import com.latifah.dogs.logic.dao.LikesDao
 
 @Database(entities = [Likes::class], version = 1, exportSchema = false)
 abstract class LikesDatabase : RoomDatabase() {
     abstract val likesDao : LikesDao
-
+//    abstract val historyDao: HistoryDao
     companion object {
         @Volatile
         private var INSTANCE : LikesDatabase? = null
@@ -23,7 +24,7 @@ abstract class LikesDatabase : RoomDatabase() {
                         context.applicationContext,
                         LikesDatabase::class.java,
                         "likes_db"
-                    ).createFromAsset("database/likes.db").build()
+                    ).build()
                     INSTANCE = instance
                 }
                 return instance

@@ -23,6 +23,10 @@ class ImageViewModel : ViewModel() {
 
     private val _status = MutableLiveData<String>()
     val status : LiveData<String> = _status
+
+    companion object {
+        private const val TAG = "ImageViewModel"
+    }
     init {
 
         getDogImage()
@@ -36,10 +40,10 @@ class ImageViewModel : ViewModel() {
                 Log.d("ImageView try", "res.message: ${response.message}")
                 _message.value = response.message
                 _status.value = response.status
-
-                Log.d("ImageView Model", "getDogImage: $message")
             } catch (e: Exception) {
-                _status.value = "Error: ${e.message}"
+//                e.message
+//                _status.value = "Error: ${e.message}"
+                Log.e(TAG, " ERROR: ${e.message}")
             }
         }
 

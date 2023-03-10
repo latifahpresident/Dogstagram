@@ -7,21 +7,24 @@
             type="com.latifah.dogs.data.models.Likes" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        >
 
         <ImageView
-            android:id="@+id/mars_image"
-            android:layout_width="wrap_content"
-            android:layout_height="170dp"
-            android:adjustViewBounds="true"
-            android:padding="6dp"
-            android:scaleType="fitXY"
-            android:src="@{photo.likeImage}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/backgrounds/scenic"
-            app:likesImageUrl="@{photo.likeImage}"/>
+                android:id="@+id/mars_image"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@{photo.likeImage}"
+                tools:src="@tools:sample/backgrounds/scenic"
+                app:likesImageUrl="@{photo.likeImage}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
