@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/dogImageFragment">
+
+    <fragment
+        android:id="@+id/dogImageFragment"
+        android:name="com.latifah.dogs.ui.fragments.image.DogImageFragment"
+        android:label="DogImageFragment"
+        tools:layout="@layout/fragment_dog_image">
+        <action
+            android:id="@+id/action_dogImageFragment_to_likesFragment"
+            app:destination="@id/likesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/likesFragment"
+        android:name="com.latifah.dogs.ui.fragments.likes.LikesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_likes" >
+        <action
+            android:id="@+id/action_likesFragment_to_dogImageFragment"
+            app:destination="@id/dogImageFragment" />
+
+    </fragment>
+</navigation>
